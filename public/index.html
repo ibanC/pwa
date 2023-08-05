@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="./manifest.json"/>
+  <link rel="icon" href="./assets/shot2.png"/>
+  <meta name="description" content="Un Juego">
+  <!--<meta name="apple-mobile-web-app-title" content="Juego">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">-->
+  <meta name="theme-color" content="#6200ee">
+  <title>Shooter Game</title>
+  <link type="text/css" rel="stylesheet" href="game.css">
+ <!--<meta name="viewport" content="user-scalable=0"/>-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="Game.js" type="text/javascript"></script>
+  <script src="Entity.js" type="text/javascript"></script>
+  <script src="Character.js" type="text/javascript"></script>
+  <script src="Player.js" type="text/javascript"></script>
+  <script src="Opponent.js" type="text/javascript"></script>
+  <script src="Shot.js" type="text/javascript"></script>
+  <script src="main.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <button id="pause" class="gamebutton" onclick="this.blur();">Pausa</button>
+  <button id="reset" class="gamebutton" onclick="windows.reload();">NUEVA PARTIDA</button>
+  <button id="butinstall" aria-label="Install" hidden>INSTALAR JUEGO</button>
+  <script>
+    if('serviceWorker' in navigator){
+      window.addEventListener("load",()=>{
+        navigator.serviceWorker.register('service-worker.js').then((reg)=>{
+          console.log("service worket registered",reg);
+        })
+      })
+    }
+  </script>
+  <script src="./install.js"></script>
+</body>
+
+</html>
